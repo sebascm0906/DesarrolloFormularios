@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Prueba</title>
+        <script src="pruebaScript.js"></script>
+    </head>
+    <body>
+        <form id="myForm">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name"><br>
+            <label for="email">Email:</label><br>
+            <input type="text" id="email" name="email"><br>
+            <label for="age">Age:</label><br>
+            <input type="number" id="age" name="age"><br>
+            <input type="button" value="Submit" onclick="submitForm()">
+          </form>
+          <script>
+            let datos =[];
+            
+                    document.addEventListener("DOMContentLoaded", function() {
+            // Get the form element
+            var form = document.getElementById("myForm");
+        
+            // Add a submit event listener to the form
+            form.addEventListener("submit", function(event) {
+            // Prevent the default form submission behavior
+            event.preventDefault();
+        
+            // Get the form data
+            var formData = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                age: document.getElementById("age").value
+            };
+        
+            // Display the form data on the page
+            var displayDiv = document.getElementById("display-div");
+            displayDiv.innerHTML = "Name: " + formData.name + "<br>Email: " + formData.email + "<br>Age: " + formData.age;
+            });
+        });
+          </script>
+    </body>
+</html>
+
+  

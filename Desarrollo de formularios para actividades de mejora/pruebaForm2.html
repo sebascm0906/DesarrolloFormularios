@@ -1,0 +1,40 @@
+<html>
+<body>
+
+<form>
+  Name: <input type="text" id="name"><br>
+  Email: <input type="text" id="email"><br>
+  Age: <input type="text" id="age"><br>
+  <input type="button" value="Submit" onclick="displayData()">
+</form> 
+
+<table id="display"></table>
+
+<script>
+class User {
+  constructor(name, email, age) {
+    this.name = name;
+    this.email = email;
+    this.age = age;
+  }
+}
+
+function displayData() {
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var age = document.getElementById("age").value;
+    var user = new User(name, email, age);
+    var table = document.getElementById("display");
+    var row = table.insertRow();
+    var name_cell = row.insertCell(0);
+    var email_cell = row.insertCell(1);
+    var age_cell = row.insertCell(2);
+    name_cell.innerHTML = "Name: " + user.name;
+    email_cell.innerHTML = "Email: " + user.email;
+    age_cell.innerHTML = "Age: " + user.age;
+}
+</script>
+
+</body>
+</html>
+
